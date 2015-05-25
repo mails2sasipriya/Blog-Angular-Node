@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <script src="/angular/angular.js"></script>
+    <script src="/angular-route/angular-route.js"></script>
+    <script src="/angular-resource/angular-resource.js"></script>
+    <script src="/controllers/blogControllers.js"></script>
+    <script src="/services.js"></script>
+
+    <script>
+        angular.module('myApp', ['myApp.controllers', 'ngRoute']).config(['$routeProvider', function ($routeProvider){
+            console.log("in route");
+            $routeProvider.when('/createblog/', {
+                templateUrl: '/partials/createblog.html',
+                controller: 'CreateBlogController as cbc'
+            }).when('/bloglist', {
+                templateUrl : '/partials/bloglist.html',
+                controller: 'ListBlogController as lbc'
+            }).when('/details/:id', {
+                templateUrl : '/partials/blogdetails.html',
+                controller: 'DetailsBlogController as dbc'
+            }).otherwise({
+                redirectTo: '/bloglist'
+            });
+        }]);
+    </script>
+
+</head>
+<body>
+    <div ng-view></div>
+</body>
+</html>

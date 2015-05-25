@@ -1,0 +1,9 @@
+
+<h1>List of All Blogs</h1>
+<ul>
+    <li ng-repeat="blog in lbc.blogs">
+        <a href="#/details/{{blog._id}}">{{blog.title}}</a>
+        <button ng-click="lbc.remove(blog)">Delete Blog</button>
+    </li>
+</ul>
+<div><a href="#/createblog">Create Blog</a></div>

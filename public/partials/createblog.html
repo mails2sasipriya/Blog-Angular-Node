@@ -1,0 +1,10 @@
+
+<div>
+    <div><a href="#/bloglist">All Blogs</a></div>
+    <input type="text" ng-model="cbc.blog.title"/>
+    <div>
+        <textarea cols="90" rows="10" ng-model="cbc.blog.content"></textarea>
+    </div>
+    <button ng-click="cbc.createNew()">Create Blog</button>
+    <div class="message">{{cbc.message}}</div>
+</div>
